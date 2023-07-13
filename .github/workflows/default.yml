@@ -1,0 +1,27 @@
+name: ci
+
+on: 
+  push:
+  workflow_dispatch:
+
+env:
+  RELEASE_DOCS_GDRIVE_FOLDER_ID: '1QinmeeJWYqmu14ZtBYOj4xCIcYaANKVE'
+  RELEASE_DOCS_TEAMDRIVE_ID: '0AB_nmDbCozt8Uk9PVA'
+  MDF_VERSION: 'v5.0'
+  SENTRY_ORG: naturalcycles
+  SENTRY_PROJECT: ncapp3
+  working_directory: ~/repo
+
+jobs:
+  one:
+    runs-on: "macos-12"
+    steps:
+      - run: |
+          echo "ANTHON=test" >> $GITHUB_ENV
+      - run: |
+          echo $ANTHON
+  two:
+    runs-on: "macos-12"
+    steps:
+      - run: |
+          echo $ANTHON
